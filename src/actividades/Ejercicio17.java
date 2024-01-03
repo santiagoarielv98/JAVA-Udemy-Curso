@@ -12,7 +12,7 @@ public class Ejercicio17
 
         for (int i = 0; i < histograma.length; i++) {
             System.out.print((i + 1) + ": ");
-            for(int j = 0; j < histograma[i]; j++) {
+            for (int j = 0; j < histograma[i]; j++) {
                 System.out.print("*");
             }
             System.out.println();

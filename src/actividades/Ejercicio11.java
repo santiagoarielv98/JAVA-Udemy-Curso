@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Ejercicio11 {
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Ingrese un fecha de nacimiento con formato yyyy-MM-dd:");
@@ -18,7 +18,7 @@ public class Ejercicio11 {
         Date fechaNacimiento = null;
         try {
             fechaNacimiento = df.parse(fechaStr);
-        } catch (ParseException e) {
+        } catch (Exception e) {
             System.out.println("La fecha ingresada no tiene el formato correcto");
             System.exit(0);
         }
