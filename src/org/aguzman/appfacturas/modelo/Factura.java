@@ -5,11 +5,11 @@ import java.util.Date;
 
 public class Factura {
 
-    private int folio;
-    private String descripcion;
-    private Date fecha;
-    private Cliente cliente;
-    private ItemFactura[] items;
+    private final int folio;
+    private final String descripcion;
+    private final Date fecha;
+    private final Cliente cliente;
+    private final ItemFactura[] items;
     private int indiceItems;
     public static final int MAX_ITEMS = 12;
     private static int ultimoFolio;
@@ -20,38 +20,6 @@ public class Factura {
         this.items = new ItemFactura[MAX_ITEMS];
         this.folio = ++ultimoFolio;
         this.fecha = new Date();
-    }
-
-    public int getFolio() {
-        return folio;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public ItemFactura[] getItems() {
-        return items;
     }
 
     public void addItemFactura(ItemFactura item) {

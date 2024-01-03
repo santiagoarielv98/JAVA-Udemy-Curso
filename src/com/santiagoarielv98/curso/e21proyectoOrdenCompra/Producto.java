@@ -1,9 +1,9 @@
 package com.santiagoarielv98.curso.e21proyectoOrdenCompra;
 
 public class Producto {
-    private String fabricante;
-    private String nombre;
-    private int precio;
+    private final String fabricante;
+    private final String nombre;
+    private final int precio;
 
     public Producto(String fabricante, String nombre, int precio) {
         this.fabricante = fabricante;
