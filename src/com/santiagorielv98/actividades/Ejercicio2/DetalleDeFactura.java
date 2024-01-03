@@ -1,9 +1,9 @@
-package actividades.Ejercicio2;
+package com.santiagorielv98.actividades.Ejercicio2;
 
 import java.util.Scanner;
 
 public class DetalleDeFactura {
-    public static void main(String[] args) {
+    public static void main(String[] _args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Ingrese el nombre de la factura:");
@@ -23,7 +23,6 @@ public class DetalleDeFactura {
                 "impuesto de " + impuesto + " y el monto después de impuesto es de " + totalNeto;
 
         System.out.println(mensaje);
-
 
 
     }

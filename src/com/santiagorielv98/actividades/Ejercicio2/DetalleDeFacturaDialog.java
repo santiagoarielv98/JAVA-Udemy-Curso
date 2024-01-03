@@ -1,4 +1,4 @@
-package actividades.Ejercicio2;
+package com.santiagorielv98.actividades.Ejercicio2;
 
 import javax.swing.*;
 

@@ -1,4 +1,4 @@
-package actividades;
+package com.santiagorielv98.actividades;
 
 import javax.swing.*;
 import java.util.Calendar;
@@ -8,7 +8,6 @@ import java.util.Map;
 public class Ejercicio10 {
     public static void main(String[] args) {
         int opcionIndice;
-        Calendar calendario = Calendar.getInstance();
         boolean salir = false;
         do {
             Map<String, Integer> opciones = new HashMap<>();
@@ -22,8 +21,8 @@ public class Ejercicio10 {
 
             Object opcion = JOptionPane.showInputDialog(null,
                     "Seleccione un Opción",
-                     "Mantenedor de Productos",
-                     JOptionPane.INFORMATION_MESSAGE, null, opArreglo, opArreglo[0]);
+                    "Mantenedor de Productos",
+                    JOptionPane.INFORMATION_MESSAGE, null, opArreglo, opArreglo[0]);
 
             if (opcion == null) {
                 JOptionPane.showMessageDialog(null, "Debe seleccionar una operación");

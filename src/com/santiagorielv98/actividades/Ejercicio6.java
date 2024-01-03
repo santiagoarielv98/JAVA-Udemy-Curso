@@ -1,4 +1,4 @@
-package actividades;
+package com.santiagorielv98.actividades;
 
 import javax.swing.*;
 

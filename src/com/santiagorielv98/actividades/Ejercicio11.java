@@ -1,7 +1,6 @@
-package actividades;
+package com.santiagorielv98.actividades;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;

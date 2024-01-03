@@ -1,4 +1,4 @@
-package actividades;
+package com.santiagorielv98.actividades;
 
 import java.util.Scanner;
 
@@ -8,18 +8,18 @@ public class Ejercicio19 {
 
         System.out.print("Ingrese tamaño de la silla: ");
         int tamanio = scanner.nextInt();
-        int mitad = tamanio/2;
+        int mitad = tamanio / 2;
 
         int[][] silla = new int[tamanio][tamanio];
 
-        if(tamanio == 0){
+        if (tamanio == 0) {
             System.out.println("ERROR");
             System.exit(1);
         }
 
         for (int i = 0; i < tamanio; i++) {
             for (int j = 0; j < tamanio; j++) {
-                if(j ==0 || (mitad <= i && j == tamanio -1) || mitad == i) {
+                if (j == 0 || (mitad <= i && j == tamanio - 1) || mitad == i) {
                     silla[i][j] = 1;
                 }
             }

@@ -1,4 +1,4 @@
-package actividades;
+package com.santiagorielv98.actividades;
 
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class Ejercicio9 {
         System.out.print("Ingrese el segundo número: ");
         int num2 = scanner.nextInt();
 
-        for(int i = 0; i < num2; i++) {
+        for (int i = 0; i < num2; i++) {
             multiplicacion += num1;
         }
 

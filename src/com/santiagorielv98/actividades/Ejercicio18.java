@@ -1,4 +1,4 @@
-package actividades;
+package com.santiagorielv98.actividades;
 
 import java.util.Scanner;
 
@@ -11,16 +11,16 @@ public class Ejercicio18 {
 
         char[][] matriz = new char[tamanio][tamanio];
 
-        if(tamanio == 0){
+        if (tamanio == 0) {
             System.out.println("ERROR");
             System.exit(1);
         }
 
         for (int i = 0; i < tamanio; i++) {
             for (int j = 0; j < tamanio; j++) {
-                if(i == j || i + j == tamanio - 1){
+                if (i == j || i + j == tamanio - 1) {
                     matriz[i][j] = 'X';
-                }else{
+                } else {
                     matriz[i][j] = '_';
                 }
             }

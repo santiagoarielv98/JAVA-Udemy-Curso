@@ -1,4 +1,4 @@
-package actividades;
+package com.santiagorielv98.actividades;
 
 public class Ejercicio14 {
     public static void main(String[] args) {
@@ -6,8 +6,8 @@ public class Ejercicio14 {
 
         int numeroMayor = numeros[0];
 
-        for(int numero: numeros){
-            if(numero > numeroMayor){
+        for (int numero : numeros) {
+            if (numero > numeroMayor) {
                 numeroMayor = numero;
             }
         }

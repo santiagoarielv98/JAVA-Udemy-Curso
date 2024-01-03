@@ -1,7 +1,6 @@
-package actividades;
+package com.santiagorielv98.actividades;
 
-public class Ejercicio17
-{
+public class Ejercicio17 {
     public static void main(String[] args) {
         int[] numeros = {4, 3, 4, 6, 6, 4, 1, 4, 5, 4, 1, 1};
         int[] histograma = new int[6];
