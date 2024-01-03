@@ -1,3 +1,5 @@
+package actividades;
+
 import javax.swing.*;
 import java.util.Calendar;
 import java.util.HashMap;

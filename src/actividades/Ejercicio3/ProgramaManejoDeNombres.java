@@ -1,4 +1,4 @@
-package Ejercicio3;
+package actividades.Ejercicio3;
 
 public class ProgramaManejoDeNombres {
     public static void main(String[] args) {

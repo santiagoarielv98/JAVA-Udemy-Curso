@@ -1,3 +1,5 @@
+package actividades;
+
 public class Ejercicio14 {
     public static void main(String[] args) {
         int[] numeros = {14, 33, 15, 36, 78, 21, 43};
