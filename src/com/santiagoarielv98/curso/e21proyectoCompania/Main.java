@@ -1,4 +1,4 @@
-package com.santiagoarielv98.curso.e22proyectoCompania;
+package com.santiagoarielv98.curso.e21proyectoCompania;
 
 public class Main {
     public static void main(String[] args) {

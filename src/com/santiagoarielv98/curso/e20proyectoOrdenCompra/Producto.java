@@ -1,4 +1,4 @@
-package com.santiagoarielv98.curso.e21proyectoOrdenCompra;
+package com.santiagoarielv98.curso.e20proyectoOrdenCompra;
 
 public class Producto {
     private final String fabricante;

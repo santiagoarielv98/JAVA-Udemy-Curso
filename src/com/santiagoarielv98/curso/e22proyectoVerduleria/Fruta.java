@@ -1,4 +1,4 @@
-package com.santiagoarielv98.curso.e23proyectoVerduleria;
+package com.santiagoarielv98.curso.e22proyectoVerduleria;
 
 public class Fruta extends Producto{
     private final double peso;
