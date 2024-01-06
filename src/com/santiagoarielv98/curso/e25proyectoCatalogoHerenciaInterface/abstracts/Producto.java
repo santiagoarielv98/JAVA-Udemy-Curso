@@ -14,6 +14,10 @@ abstract public class Producto implements IProducto {
         return precio;
     }
 
+    @Override
+    public double getPrecioVenta() {
+        return getPrecio();
+    }
 
     @Override
     public String toString() {
