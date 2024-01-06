@@ -26,6 +26,6 @@ public class TvLcd extends Electronico {
 
     @Override
     public String toString() {
-        return super.toString() + "\nPulgadas: " + getPulgada();
+        return super.toString() + "\nPulgadas: " + getPulgada() + "\nPrecio de venta: " + getPrecioVenta();
     }
 }

@@ -32,6 +32,6 @@ public class IPhone extends Electronico {
 
     @Override
     public String toString() {
-        return super.toString() + "\nColor: " + getColor() + "\nModelo: " + getModelo();
+        return super.toString() + "\nColor: " + getColor() + "\nModelo: " + getModelo() + "\nPrecio de venta: " + getPrecioVenta();
     }
 }

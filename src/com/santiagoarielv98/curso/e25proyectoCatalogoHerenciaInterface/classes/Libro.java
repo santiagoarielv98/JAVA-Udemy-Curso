@@ -48,6 +48,7 @@ public class Libro extends Producto implements ILibro {
 
     @Override
     public String toString() {
-        return super.toString() + "\nFecha de publicación: " + getFechaPublicacion() + "\nAutor: " + getAutor() + "\nTítulo: " + getTitulo() + "\nEditorial: " + getEditorial();
+        return super.toString() + "\nFecha de publicación: " + getFechaPublicacion() + "\nAutor: " + getAutor() +
+                "\nTítulo: " + getTitulo() + "\nEditorial: " + getEditorial() + "\nPrecio de venta: " + getPrecioVenta();
     }
 }
