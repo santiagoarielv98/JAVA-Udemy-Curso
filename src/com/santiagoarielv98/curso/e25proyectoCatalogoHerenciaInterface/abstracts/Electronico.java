@@ -16,11 +16,6 @@ abstract public class Electronico extends Producto implements IElectronico  {
     }
 
     @Override
-    public double getPrecioVenta() {
-        return getPrecio() * 1.3;
-    }
-
-    @Override
     public String toString() {
         return super.toString() + "\n" +
                 "Fabricante: " + getFabricante();

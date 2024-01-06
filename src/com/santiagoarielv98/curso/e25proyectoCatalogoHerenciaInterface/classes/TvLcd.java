@@ -15,7 +15,12 @@ public class TvLcd extends Electronico {
     }
 
     @Override
-    public double getPrecioVenta() {
+    public int getPrecio() {
+        return precio;
+    }
+
+    @Override
+    public Double getPrecioVenta() {
         return getPrecio() * 1.21;
     }
 

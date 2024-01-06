@@ -2,5 +2,5 @@ package com.santiagoarielv98.curso.e25proyectoCatalogoHerenciaInterface.interfac
 
 public interface IProducto {
     int getPrecio();
-    double getPrecioVenta();
+    Double getPrecioVenta();
 }

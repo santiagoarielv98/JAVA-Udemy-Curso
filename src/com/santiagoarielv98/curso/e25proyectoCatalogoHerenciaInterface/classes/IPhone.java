@@ -21,8 +21,13 @@ public class IPhone extends Electronico {
     }
 
     @Override
-    public double getPrecioVenta() {
-        return super.getPrecio();
+    public int getPrecio() {
+        return precio;
+    }
+
+    @Override
+    public Double getPrecioVenta() {
+        return getPrecio() * 1.3;
     }
 
     @Override

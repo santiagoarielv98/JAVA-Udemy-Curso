@@ -37,7 +37,12 @@ public class Libro extends Producto implements ILibro {
     }
 
     @Override
-    public double getPrecioVenta() {
+    public int getPrecio() {
+        return precio;
+    }
+
+    @Override
+    public Double getPrecioVenta() {
         return getPrecio() * 1.21;
     }
 
