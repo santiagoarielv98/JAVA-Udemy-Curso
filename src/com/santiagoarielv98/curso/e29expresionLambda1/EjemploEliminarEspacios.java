@@ -8,7 +8,6 @@ public class EjemploEliminarEspacios {
 
         Function<String,String> lambda = (str)-> str.replace(" ","");
 
-
         String resultado = lambda.apply(ejemplo);
 
         System.out.println(resultado);
