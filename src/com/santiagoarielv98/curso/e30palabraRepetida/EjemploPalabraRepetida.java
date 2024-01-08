@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class EjemploPalabraRepetida {
     public static void main(String[] args) {
-        String frase = "Esta es una frase con muchas palabras repetidas y muchas palabras";
+        String frase = "Esta es una frase con muchas palabras repetidas y muchas";
 
         // lambda
         PalabraRepetida palabraRepetida = (String f) -> {
@@ -42,6 +42,3 @@ public class EjemploPalabraRepetida {
     }
 }
 
-interface PalabraRepetida {
-    Map<String, Integer> palabraRepetida(String frase);
-}
