@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/layout/main.xhtml"
+>
+    <ui:define name="content">
+        <p:commandButton value="#{messages['producto.boton.volver']}" action="index" ajax="true" immediate="true"/>
+        <h2>
+            #{productoController.producto.id != null ? messages['producto.boton.editar'] : messages['producto.boton.crear']} Producto
+        </h2>
+        <h:form style="max-width: 500px;">
+            <h:inputHidden value="#{productoController.producto.id}"/>
+            <h:inputHidden value="#{productoController.producto.fechaRegistro}">
+                <f:convertDateTime type="localDate" pattern="yyyy-MM-dd"/>
+            </h:inputHidden>
+            <div class="field">
+                <p:outputLabel styleClass="block" for="nombre" value="#{messages['producto.nombre']}:"/>
+                <p:inputText styleClass="inline-block mr-2" id="nombre"
+                             value="#{productoController.producto.nombre}"
+                             requiredMessage="El nombre es obligatorio."/>
+                <p:message for="nombre"/>
+            </div>
+
+            <div class="field">
+                <p:outputLabel styleClass="block" for="sku" value="#{messages['producto.sku']}:"/>
+                <p:inputText styleClass="inline-block mr-2" id="sku" value="#{productoController.producto.sku}"
+                             requiredMessage="El SKU es ob ligatorio."/>
+                <p:message for="sku"/>
+            </div>
+            <div class="field">
+                <p:outputLabel styleClass="block" for="categoria" value="#{messages['producto.categoria']}:"/>
+                <p:selectOneMenu styleClass="inline-block mr-2" id="categoria"
+                                 value="#{productoController.producto.categoria}"
+                                 converter="#{categoriaConverter}">
+                    <f:selectItem itemLabel="--- Seleccionar una categoria" itemValue="${null}"/>
+                    <f:selectItems value="#{productoController.categorias}" var="categoria"
+                                   itemLabel="#{categoria.nombre}"/>
+                </p:selectOneMenu>
+                <p:message for="categoria"/>
+            </div>
+            <div class="field">
+                <p:outputLabel styleClass="block" for="precio" value="#{messages['producto.precio']}:"/>
+                <p:inputText styleClass="inline-block mr-2" id="precio"
+                             value="#{productoController.producto.precio}"
+                             requiredMessage="El precio es obligatorio."/>
+                <p:message for="precio"/>
+            </div>
+            <div class="field">
+                <p:outputLabel styleClass="block" for="fechaRegistro"
+                               value="#{messages['producto.fechaRegistro']}:"
+                               rendered="#{productoController.producto.id != null}"/>
+                <p:datePicker pattern="yyyy-MM-dd" styleClass="block" id="fechaRegistro"
+                              value="#{productoController.producto.fechaRegistro}"
+                              rendered="#{productoController.producto.id != null}">
+                    <f:convertDateTime type="localDate" pattern="yyyy-MM-dd"/>
+                    <f:passThroughAttribute name="readonly" value="true"/>
+                </p:datePicker>
+                <p:message for="fechaRegistro"/>
+            </div>
+            <div class="flex gap-2 mt-2">
+                <p:commandButton styleClass="ui-button-danger" value="#{messages['producto.boton.cancelar']}"
+                                 action="index?faces-redirect=true"
+                                 immediate="true"/>
+                <p:commandButton
+                        value="#{productoController.producto.id != null ? messages['producto.boton.editar'] : messages['producto.boton.crear']}"
+                        action="#{productoController.guardar}"
+                        update="@form"
+                />
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      data-bs-theme="dark"
+      lang="#{lenguajeController.language}"
+      id="root"
+>
+<h:outputStylesheet library="webjars" name="primeflex/3.3.1/primeflex.min.css"/>
+<h:head>
+    <title>Listado de productos</title>
+    <ui:insert name="head"/>
+    <h:outputStylesheet>
+        .ui-growl {
+            top: unset !important;
+            bottom: 0;
+            right: 20px !important;
+        }
+    </h:outputStylesheet>
+</h:head>
+<f:view locale="#{lenguajeController.locale}">
+    <h:body>
+        <p:menubar>
+            <p:menuitem value="#{messages['navbar.texto.inicio']}"
+                        icon="pi pi-fw pi-home"
+                        action="index"
+                        immediate="true"
+            />
+            <p:menuitem value="#{messages['navbar.texto.crear']}"
+                        icon="pi pi-fw pi-plus"
+                        action="form"/>
+            <p:submenu label="#{messages['navbar.texto.cambiarLenguaje']}">
+                <c:forEach items="#{lenguajeController.supportedLocales}" var="l">
+                    <p:menuitem value="#{l.displayLanguage}"
+                                action="#{lenguajeController.changeLanguage(l.language)}"
+                                update="@all"
+                                styleClass="ui-menuitem-active #{lenguajeController.locale.language eq l.language ? 'active ui-menuitem-active' : ''}"
+                                immediate="true"
+                    />
+                </c:forEach>
+            </p:submenu>
+        </p:menubar>
+        <p:card styleClass="p-m-2">
+            <ui:insert name="content"/>
+        </p:card>
+    </h:body>
+</f:view>
+</html>

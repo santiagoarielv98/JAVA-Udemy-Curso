@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/layout/main.xhtml"
+>
+    <ui:define name="content">
+        <h:link styleClass="btn btn-outline-secondary" outcome="index?faces-redirect=true"
+                value="#{messages['producto.boton.volver']}" immediate="true"/>
+        <h2>
+            #{productoController.producto.id != null ? messages['producto.boton.editar'] : messages['producto.boton.crear']} Producto
+        </h2>
+        <h:form style="max-width: 500px;">
+            <h:inputHidden value="#{productoController.producto.id}"/>
+            <h:inputHidden value="#{productoController.producto.fechaRegistro}">
+                <f:convertDateTime type="localDate" pattern="yyyy-MM-dd"/>
+            </h:inputHidden>
+            <div class="mb-3">
+                <h:outputLabel styleClass="form-label" for="nombre" value="#{messages['producto.nombre']}:"/>
+                <h:inputText styleClass="form-control#{!component.attributes.valid ? ' is-invalid' :''}"
+                             id="nombre"
+                             value="#{productoController.producto.nombre}"
+                             requiredMessage="El nombre es obligatorio."/>
+                <h:message styleClass="invalid-feedback d-block" for="nombre"/>
+            </div>
+
+            <div class="mb-3">
+                <h:outputLabel styleClass="form-label" for="sku" value="#{messages['producto.sku']}:"/>
+                <h:inputText
+                        styleClass="form-control#{!component.attributes.valid ? ' is-invalid' :''}"
+                        id="sku" value="#{productoController.producto.sku}"
+                        requiredMessage="El SKU es ob ligatorio."/>
+                <h:message styleClass="invalid-feedback d-block" for="sku"/>
+            </div>
+            <div class="mb-3">
+                <h:outputLabel styleClass="form-label" for="categoria" value="#{messages['producto.categoria']}:"/>
+                <h:selectOneMenu
+                        styleClass="form-control#{!component.attributes.valid ? ' is-invalid' :''}"
+                        id="categoria"
+                        value="#{productoController.producto.categoria}"
+                        converter="#{categoriaConverter}">
+                    <f:selectItem itemLabel="--- Seleccionar una categoria" itemValue="${null}"/>
+                    <f:selectItems value="#{productoController.categorias}" var="categoria"
+                                   itemLabel="#{categoria.nombre}"/>
+                </h:selectOneMenu>
+                <h:message styleClass="invalid-feedback d-block" for="categoria"/>
+            </div>
+            <div class="mb-3">
+                <h:outputLabel styleClass="form-label" for="precio" value="#{messages['producto.precio']}:"/>
+                <h:inputText
+                        styleClass="form-control#{!component.attributes.valid ? ' is-invalid' :''}"
+                        id="precio"
+                        value="#{productoController.producto.precio}"
+                        requiredMessage="El precio es obligatorio."/>
+                <h:message styleClass="invalid-feedback d-block" for="precio"/>
+            </div>
+            <div class="mb-3">
+                <h:outputLabel styleClass="form-label" for="fechaRegistro"
+                               value="#{messages['producto.fechaRegistro']}:"
+                               rendered="#{productoController.producto.id != null}"/>
+                <h:inputText
+                        styleClass="form-control#{!component.attributes.valid ? ' is-invalid' :''}"
+                        id="fechaRegistro"
+                        value="#{productoController.producto.fechaRegistro}"
+                        rendered="#{productoController.producto.id != null}">
+                    <f:convertDateTime type="localDate" pattern="yyyy-MM-dd"/>
+                    <f:passThroughAttribute name="readonly" value="true"/>
+                    <f:passThroughAttribute name="type" value="date"/>
+                </h:inputText>
+                <h:message styleClass="invalid-feedback d-block" for="fechaRegistro"/>
+            </div>
+            <h:commandButton
+                    styleClass="btn btn-primary me-2"
+                    value="#{productoController.producto.id != null ? messages['producto.boton.editar'] : messages['producto.boton.crear']}"
+                    action="#{productoController.guardar}"/>
+            <h:commandButton
+                    styleClass="btn btn-secondary"
+                    value="#{messages['producto.boton.cancelar']}" action="index?faces-redirect=true" immediate="true"/>
+        </h:form>
+    </ui:define>
+</ui:composition>

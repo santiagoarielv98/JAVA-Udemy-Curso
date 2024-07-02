@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/layout/main.xhtml"
+>
+    <ui:define name="content">
+        <div class="card">
+            <h:form>
+                <p:growl id="growl" showDetail="true"/>
+                <p:dataTable var="producto" value="#{productoController.productos}" rowHover="true" id="tablaProductos">
+                    <f:facet name="header">
+                        #{messages['home.texto.listado']}
+                    </f:facet>
+                    <p:column headerText="#{messages['producto.id']}">
+                        #{producto.id}
+                    </p:column>
+                    <p:column headerText="#{messages['producto.nombre']}">
+                        #{producto.nombre}
+                    </p:column>
+                    <p:column headerText="#{messages['producto.sku']}">
+                        #{producto.sku}
+                    </p:column>
+                    <p:column headerText="#{messages['producto.categoria']}">
+                        #{producto.categoria.nombre}
+                    </p:column>2
+                    <p:column headerText="#{messages['producto.precio']}">
+                        #{producto.precio}
+                    </p:column>
+                    <p:column headerText="#{messages['producto.fechaRegistro']}">
+                        #{producto.fechaRegistro}
+                    </p:column>
+                    <p:column headerText="#{messages['producto.acciones']}">
+                        <p:commandButton value="#{messages['producto.boton.editar']}"
+                                         action="#{productoController.editar(producto.id)}"
+                                         ajax="true"
+                        />
+                        <p:commandButton styleClass="ml-2 ui-button-danger"
+                                         value="#{messages['producto.boton.eliminar']}"
+                                         actionListener="#{productoController.eliminar(producto.id)}"
+                                         onclick="return confirm(`¿Está seguro que desea eliminar '#{producto.nombre}'?`)"
+                                         update="tablaProductos"
+                                         ajax="false"
+                        />
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
